@@ -1,0 +1,45 @@
+@if (product(); as p) {
+  <div class="container m-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="container mb-5 text-center">
+          <img [src]="p.imageUrl" class="rounded-4 shadow-sm" alt="" />
+        </div>
+        <div class="row product-grid g-3">
+          @for (image of [1, 2, 3, 4]; track $index) {
+            <div class="col-lg-3 d-flex justify-content-center">
+              <a class="hover-container d-block">
+                <img class="rounded shadow-sm img-custom" [src]="p.imageUrl" alt="product" />
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h1>{{ p.name }}</h1>
+        <p>{{ p.description }}</p>
+        <p-rating [(ngModel)]="p.rating" [readonly]="true"> </p-rating>
+        <div class="d-flex justify-content-end mt-5">
+          <p class="fw-bold fs-3">{{ p.price }}$</p>
+        </div>
+        @if (p.stock > 0) {
+          <div class="container w-25 text-center p-1 m-1 rounded-3 bg-success text-white">
+            <span>in stock</span>
+          </div>
+        } @else {
+          <div class="p-1 rounded-1 bg-danger text-white">
+            <span>out of stock</span>
+          </div>
+        }
+        <div class="d-inline-flex  my-5  fw-bold bg-secondary p-1  justify-content-center p-2  rounded-4 text-white">
+          <p class="m-0">{{ p.category }}</p>
+        </div>
+        <div class="my-5 d-flex gap-3">
+          <button class="btn btn-outline-success rounded-pill">buynow</button>
+          <button class="btn btn-outline-success rounded-pill">add to cart</button>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+}

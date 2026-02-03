@@ -1,0 +1,27 @@
+.product-grid img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* This is the secret sauce! It prevents the image from stretching/squishing */
+  border-radius: 8px;
+}
+
+/* 1. Define the fixed size and fit */
+.img-custom {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 2. The Hover Effect */
+.hover-container {
+  overflow: hidden; /* This keeps the zoom INSIDE the rounded corners */
+  border-radius: var(--bs-border-radius); /* Uses Bootstrap's default rounding variable */
+}
+
+
+
+.hover-container:hover {
+  transform: translateY(-0.2rem); 
+  box-shadow: 0 10px 20px #5d6b6a;
+}

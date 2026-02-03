@@ -1,0 +1,4 @@
+.navbar-brand.active, .btn.active {
+    font-weight: bold;
+    color: #17e898  !important;
+}

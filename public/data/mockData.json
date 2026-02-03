@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Minimalist  Watch",
+    "description": "A sleek, stainless steel timepiece with a genuine leather band.",
+    "price": 129.99,
+    "category": "Accessories",
+    "rating": 5,
+    "stock": 12,
+    "imageUrl": "https://picsum.photos/id/175/500/500",
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "name": "Vintage SLR Camera",
+    "description": "Classic 35mm film camera, fully restored for enthusiasts.",
+    "price": 245.00,
+    "category": "Electronics",
+    "rating": 4,
+    "stock": 5,
+    "imageUrl": "https://picsum.photos/id/250/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 3,
+    "name": "Smart Tablet Pro",
+    "description": "12-inch display with pressure-sensitive stylus support.",
+    "price": 799.00,
+    "category": "Tech",
+    "rating": 3,
+    "stock": 8,
+    "imageUrl": "https://picsum.photos/id/48/500/500",
+    "isFeatured": true
+  },
+  {
+    "id": 4,
+    "name": "Ceramic Pour-Over Kit",
+    "description": "Complete set for the perfect morning brew and server.",
+    "price": 45.00,
+    "category": "Kitchen",
+    "rating": 2,
+    "stock": 0,
+    "imageUrl": "https://picsum.photos/id/425/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 5,
+    "name": "Leather Backpack",
+    "description": "Durable, handcrafted leather bag for daily commutes.",
+    "price": 89.00,
+    "category": "Accessories",
+    "rating": 1,
+    "stock": 10,
+    "imageUrl": "https://picsum.photos/id/367/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 6,
+    "name": "Modern  Lamp",
+    "description": "Industrial style lightbulb with a minimalist wood base.",
+    "price": 35.99,
+    "category": "Furniture",
+    "rating": 0,
+    "stock": 15,
+    "imageUrl": "https://picsum.photos/id/201/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "name": "Ergonomic  Chair",
+    "description": "Scandinavian design with contoured seat for comfort.",
+    "price": 150.00,
+    "category": "Furniture",
+    "rating": 5,
+    "stock": 4,
+    "imageUrl": "https://picsum.photos/id/445/500/500",
+    "isFeatured": true
+  },
+  {
+    "id": 8,
+    "name": "Succulent Trio",
+    "description": "Three small, easy-to-care-for indoor plants in clay pots.",
+    "price": 22.50,
+    "category": "Home",
+    "rating": 4,
+    "stock": 50,
+    "imageUrl": "https://picsum.photos/id/152/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "name": "Wired Headphones",
+    "description": "High-fidelity audio with comfortable over-ear cushions.",
+    "price": 115.00,
+    "category": "Electronics",
+    "rating": 4,
+    "stock": 20,
+    "imageUrl": "https://picsum.photos/id/211/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 10,
+    "name": "Journaling Set",
+    "description": "Hardcover notebook with a premium ink pen.",
+    "price": 28.00,
+    "category": "Stationery",
+    "rating": 5,
+    "stock": 30,
+    "imageUrl": "https://picsum.photos/id/24/500/500",
+    "isFeatured": true
+  },
+  {
+    "id": 11,
+    "name": "Mechanical Keyboard",
+    "description": "Compact 60% layout with tactile brown switches.",
+    "price": 95.00,
+    "category": "Tech",
+    "rating": 4,
+    "stock": 6,
+    "imageUrl": "https://picsum.photos/id/160/500/500",
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "name": "Canvas Wall Art",
+    "description": "Abstract mountain landscape print on 16x20 canvas.",
+    "price": 55.00,
+    "category": "Home",
+    "rating": 3,
+    "stock": 0,
+    "imageUrl": "https://picsum.photos/id/10/500/500",
+    "isFeatured": false
+  }
+]
