@@ -1,19 +1,32 @@
 export interface Product {
   id: number;
-
-  name: string;
-
+  title: string;
   description: string;
-
-  price: number;
-
   category: string;
-
+  price: number;
+  discountPercentage: number;
   rating: number;
-
   stock: number;
-
-  imageUrl: string;
-
-  isFeatured: boolean;
+  tags: string[];
+  brand: string;
+  sku: string;
+  weight: number;
+  dimensions: {
+    width: number;
+    height: number;
+    depth: number;
+  };
+  warrantyInformation: string;
+  shippingInformation: string;
+  availabilityStatus: string;
+  reviews: Array<{
+    rating: number;
+    comment: string;
+    date: string;
+    reviewerName: string;
+    reviewerEmail: string;
+  }>;
+  returnPolicy: string;
+  images: string[];
+  thumbnail: string;
 }

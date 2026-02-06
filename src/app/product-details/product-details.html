@@ -3,20 +3,20 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="container mb-5 text-center">
-          <img [src]="p.imageUrl" class="rounded-4 shadow-sm" alt="" />
+          <img [src]="p.images.at(1)" class="rounded-4 shadow-sm" alt="" />
         </div>
         <div class="row product-grid g-3">
           @for (image of [1, 2, 3, 4]; track $index) {
             <div class="col-lg-3 d-flex justify-content-center">
               <a class="hover-container d-block">
-                <img class="rounded shadow-sm img-custom" [src]="p.imageUrl" alt="product" />
+                <img class="rounded shadow-sm img-custom" [src]="p.images.at(1)" alt="product" />
               </a>
             </div>
           }
         </div>
       </div>
       <div class="col-lg-6">
-        <h1>{{ p.name }}</h1>
+        <h1>{{ p.brand }}</h1>
         <p>{{ p.description }}</p>
         <p-rating [(ngModel)]="p.rating" [readonly]="true"> </p-rating>
         <div class="d-flex justify-content-end mt-5">

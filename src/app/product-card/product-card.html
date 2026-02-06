@@ -1,6 +1,6 @@
 @if (product(); as p) {
   <div class="card rounded-5 shadow-sm  w-100" style="width: 18rem ">
-    <img [src]="product()?.imageUrl" class="card-img-top" alt="..." />
+    <img [src]="product()?.images?.at(1)" class="card-img-top" alt="..." />
 
     @if (p.stock > 0) {
       <div class="z-1 position-absolute p-1 m-1 rounded-1 bg-success text-white">
@@ -14,7 +14,7 @@
 
     <div class="card-body">
       <div class="d-flex justify-content-between">
-        <h5 class="card-title">{{ p.name }}</h5>
+        <h5 class="card-title">{{ p.brand }}</h5>
         <h5>{{p.price}}$</h5>
       </div>
       

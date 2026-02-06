@@ -12,5 +12,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductCard {
     product = input<Product>();
-
+    
 }
