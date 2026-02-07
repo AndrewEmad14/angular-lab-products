@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../model/product';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -13,8 +13,8 @@ import { ServiceApi } from '../service-api';
 export class ProductWraper implements OnInit {
   productList = signal<Product[]>([]);
   error: string | null = null;
-
-  constructor(private apiService: ServiceApi) {}
+  serviceApi = inject(ServiceApi);
+  //constructor(private serviceApi: ServiceApi) {}
 
   ngOnInit() {
     this.fetchProduct();
@@ -23,11 +23,9 @@ export class ProductWraper implements OnInit {
   fetchProduct() {
     this.error = null;
 
-    this.apiService.getProduct().subscribe({
+    this.serviceApi.getProduct().subscribe({
       next: (data) => {
         this.productList.set(data.products);
-        console.log(this.productList)
-        
       },
       error: (err) => {
         this.error = 'Failed to load products';

@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Product } from '../model/product';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { ServiceCartItem } from '../service-cart-item';
 
 
 @Component({
@@ -12,5 +13,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductCard {
     product = input<Product>();
+    private cartService = inject(ServiceCartItem);
     
+    addToCart(event:Event){
+      event.stopPropagation()
+      event.preventDefault();
+      if(typeof this.product() ){
+        this.cartService.addToCart({id:this.product()!.id ,count: 1})
+      }
+      
+    }
 }

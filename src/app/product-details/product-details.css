@@ -1,14 +1,14 @@
-.product-grid img {
-  width: 150px;
-  height: 150px;
+.product-grid .img-custom {
+  width: 10rem;
+  height: 10rem;
   object-fit: cover; /* This is the secret sauce! It prevents the image from stretching/squishing */
   border-radius: 8px;
 }
 
 /* 1. Define the fixed size and fit */
 .img-custom {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
   transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
@@ -24,4 +24,11 @@
 .hover-container:hover {
   transform: translateY(-0.2rem); 
   box-shadow: 0 10px 20px #5d6b6a;
+}
+
+.main-img{
+  width: 40rem;
+  height: 40rem;
+  object-fit: cover; /* This is the secret sauce! It prevents the image from stretching/squishing */
+  border-radius: 8px;
 }

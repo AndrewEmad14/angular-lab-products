@@ -1,34 +1,66 @@
-<div class="container my-5">
-  <h2 class="mb-4">Your Cart</h2>
-  
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="card p-3 mb-3 d-flex flex-row align-items-center justify-content-between">
-        <div class="d-flex align-items-center gap-3">
-          <div class="bg-light rounded" style="width: 60px; height: 60px;"></div>
-          <div>
-            <h6 class="m-0">Sample Product</h6>
-            <small class="text-muted">$99.00</small>
-          </div>
-        </div>
-        <button class="btn btn-sm btn-outline-danger">Remove</button>
-      </div>
-    </div>
+@if (cartItems().length) {
+  <div class="container my-5">
+    <h2 class="mb-4">Shopping Cart</h2>
 
-    <div class="col-lg-4">
-      <div class="card p-4 bg-light">
-        <h4>Summary</h4>
-        <hr>
-        <div class="d-flex justify-content-between mb-2">
-          <span>Subtotal</span>
-          <span>$99.00</span>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        @for (item of cartItems(); track item.id) {
+          <div class="card border-0 shadow-sm p-4 mb-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex gap-3 flex-grow-1">
+                <img
+                  [src]="item.images.at(0)"
+                  alt="product"
+                  class="rounded"
+                  style="width: 80px; height: 80px; object-fit: cover"
+                />
+
+                <div class="flex-grow-1">
+                  <h6 class="mb-1 fw-600">{{ item.brand }}</h6>
+                  <p class="text-muted small mb-2">{{ item.description }}</p>
+                  <h5 class="text-success">${{ item.price }}</h5>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-light border" (click)="decreaseItemCount(item.id)">
+                  −
+                </button>
+                <span class="px-3">{{ getCount(item.id) }}</span>
+                <button class="btn btn-sm btn-light border" (click)="addItem(item.id)">+</button>
+              </div>
+
+              <button class="btn btn-sm btn-danger ms-3" (click)="removeItem(item.id)">✕</button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-4 sticky-top" style="top: 20px">
+          <h5 class="mb-3">Order Summary</h5>
+          <hr class="my-2" />
+
+          <div class="d-flex justify-content-between mb-2 small">
+            <span>Subtotal</span>
+            <span>${{ getTotalPrice() }}</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3 small text-muted">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+
+          <hr class="my-2" />
+          <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
+            <span>Total</span>
+            <span class="text-success">${{ getTotalPrice() }}</span>
+          </div>
+
+          <button class="btn btn-success w-100 py-2">Proceed to Checkout</button>
         </div>
-        <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
-          <span>Total</span>
-          <span>$99.00</span>
-        </div>
-        <button class="btn btn-success w-100">Checkout</button>
       </div>
     </div>
   </div>
-</div>
+} @else {
+  <app-empty-cart></app-empty-cart>
+}

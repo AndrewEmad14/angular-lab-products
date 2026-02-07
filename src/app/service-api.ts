@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceApi {
-  apiUrl = "https://dummyjson.com/products";
-  constructor(private http: HttpClient) {}
+  apiUrl = environment.apiUrl;
+  private http = inject(HttpClient);
+  // constructor(private http: HttpClient) {} // this is the old way to inject the httpClient service
 
   getProduct(): Observable<any> {
     return this.http.get(this.apiUrl);
